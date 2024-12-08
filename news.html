@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "amber-black": "#072D4B",
+            },
+            fontFamily: {
+              roboto: ["Roboto", "sans-serif"],
+            },
+            borderWidth: {
+              0.1: "0.1px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-roboto bg-[#F4F9F8]">
+    <div class="container flex">
+      <!-- SIDEBAR SECTION -->
+      <div
+        id="sidebar"
+        class="h-screen fixed overflow-y-hidden hover:overflow-y-auto flex flex-col pt-[20px] pr-[17px]"
+      >
+        <!-- LOGO AND NAME DIV -->
+        <div
+          class="pl-[30px] flex items-center gap-[15px] mb-[35px] cursor-pointer"
+        >
+          <!-- Logo img -->
+          <div class="w-[30px] h-[25px]">
+            <img src="./images/logo.svg" class="size-full object-contain" />
+          </div>
+          <span class="text-lg font-bold text-[#0768B5]">Aster News</span>
+        </div>
+
+        <!-- MENUES ACTIVE-->
+        <div
+          class="w-[243px] h-[50px] bg-[#E1F1F9] rounded-r-full flex-shrink-0 flex items-center pl-[15px] mb-4 cursor-pointer"
+        >
+          <!-- POINT -->
+          <div class="size-[6px] bg-[#2F9FF8] rounded-full mr-3"></div>
+          <img src="./images/home.svg" class="size-[24px]" />
+          <span class="ml-[22px] text-[#2F9FF8] font-bold text-[15px] leading-4"
+            >Top Stories</span
+          >
+        </div>
+
+        <div class="flex items-center mb-[30px] cursor-pointer">
+          <img src="./images/globe.svg" class="size-6 ml-[33px] mr-[22px]" />
+          <span class="text-amber-black text-[15px] leading-3"
+            >Around the World</span
+          >
+        </div>
+
+        <div class="flex items-center mb-[30px] cursor-pointer">
+          <img src="./images/business.svg" class="size-6 ml-[33px] mr-[22px]" />
+          <span class="text-amber-black text-[15px] leading-3">Business</span>
+        </div>
+
+        <div class="flex items-center mb-[34px] cursor-pointer">
+          <img
+            src="./images/heartbeat.svg"
+            class="size-6 ml-[33px] mr-[22px]"
+          />
+          <span class="text-amber-black text-[15px] leading-3">Health</span>
+        </div>
+
+        <hr class="text-[#667F90] mb-[20px] border" />
+
+        <div class="flex items-center mb-[17px] cursor-pointer">
+          <img src="./images/covid.svg" class="size-6 ml-[33px] mr-[22px]" />
+          <span class="text-amber-black text-[15px] leading-3">Covid 19</span>
+        </div>
+
+        <hr class="text-[#667F90] mb-[35px] border" />
+
+        <div class="flex items-center mb-[30px] cursor-pointer">
+          <img
+            src="./images/play-circle.svg"
+            class="size-6 ml-[33px] mr-[22px]"
+          />
+          <span class="text-amber-black text-[15px] leading-3"
+            >Entertainment</span
+          >
+        </div>
+
+        <div class="flex items-center mb-[30px] cursor-pointer">
+          <img src="./images/award.svg" class="size-6 ml-[33px] mr-[22px]" />
+          <span class="text-amber-black text-[15px] leading-3">Sports</span>
+        </div>
+
+        <div class="flex items-center mb-[30px] cursor-pointer">
+          <img
+            src="./images/message-circle.svg"
+            class="size-6 ml-[33px] mr-[22px]"
+          />
+          <span class="text-amber-black text-[15px] leading-3">Discussion</span>
+        </div>
+
+        <div class="flex items-center mb-[30px] cursor-pointer">
+          <img src="./images/bell.svg" class="size-6 ml-[33px] mr-[22px]" />
+          <span class="text-amber-black text-[15px] leading-3"
+            >Notification</span
+          >
+        </div>
+
+        <div class="flex items-center cursor-pointer">
+          <img src="./images/settings.svg" class="size-6 ml-[33px] mr-[22px]" />
+          <span class="text-amber-black text-[15px] leading-3"
+            >News Feed Settings</span
+          >
+        </div>
+
+        <!-- SUBSCRIBE GIFT -->
+        <div class="mb-8 px-4 mt-[120px]">
+          <div class="bg-[#2f9ff8] p-4 rounded-md">
+            <div class="flex items-center space-x-4 mb-3">
+              <figure class="w-6 h-6">
+                <img
+                  src="./images/gift.svg"
+                  class="object-cover text-white"
+                  alt="Bell"
+                />
+              </figure>
+              <p class="font-normal text-sm text-white">Subscribe to Premium</p>
+            </div>
+            <div class="flex justify-between items-center">
+              <p class="text-white">
+                <span class="font-bold text-[25px] text-white">$8</span>/m
+              </p>
+              <button
+                class="py-2 px-4 bg-[#0768B5] text-white w-[110px] text-center rounded-md"
+              >
+                Upgrade
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN DIV -->
+      <div id="main" class="ml-[300px] flex-1 overflow-y-auto px-[30px]">
+        <!-- HEADER -->
+        <header class="flex pt-[14px] relative">
+          <div class="relative flex mr-10">
+            <input
+              type="text"
+              placeholder="Search for news.."
+              class="w-[495px] h-[46px] p-[14px] bg-[#ECF5F8] rounded-[4px] focus:outline-none"
+            />
+            <img src="./images/search.svg" class="absolute right-3 top-3" />
+          </div>
+
+          <div
+            class="cursor-pointer h-[46px] w-[256px] p-[14px] flex items-center border border-[#072D4B] rounded-[4px] relative"
+          >
+            <p class="text-[15px] text-amber-black">
+              Latest news on
+              <span class="text-[#2F9FF8] font-medium">Covid-19</span>
+            </p>
+            <img
+              src="./images/arrow-right.svg"
+              class="absolute right-2 top-3"
+            />
+          </div>
+
+          <div class="cursor-pointer flex items-center absolute right-0 top-6">
+            <img src="./images/user.svg" />
+            <span class="ml-[13px] mr-[36px]">My Profile</span>
+            <img src="./images/down.svg" />
+          </div>
+        </header>
+
+        <p
+          class="w-[774px] text-amber-black mt-[39px] mb-[22px] font-bold text-[26px] leading-8"
+        >
+          Leak: Samsung to announce the Z Fold 3 and Galaxy Watch 4 in August
+        </p>
+
+        <!-- LEFT AND RIGHT -->
+        <div class="flex gap-11">
+          <div class="flex flex-col">
+            <div class="flex gap-[20px] mb-[21px]">
+              <div
+                class="cursor-pointer bg-[#CCE7F8] text-[#2F9FF8] px-[10px] py-2 rounded-[4px] text-[14px] leading-[14px]"
+              >
+                Tech
+              </div>
+              <div
+                class="cursor-pointer bg-[#CCE7F8] text-[#2F9FF8] px-[10px] py-2 rounded-[4px] text-[14px] leading-[14px]"
+              >
+                Mobile
+              </div>
+            </div>
+
+            <span class="text-[17px] leading-5 text-amber-black opacity-60 mb-9"
+              >Samsung's next Unpacked event reportedly lands August 11</span
+            >
+
+            <img src="./images/ipad.jpeg" class="rouned-[4px] mb-[38px]" />
+
+            <span class="text-amber-black text-[17px] leading-7 opacity-60 mb-7"
+              >Samsung had a pretty quiet Mobile World Congress event, but it
+              did tell us we’d learn more about its upcoming Google-approved
+              smartwatch at its next Unpacked event. Unfortunately, the company
+              didn’t tell us when exactly that would be, but a new report from
+              Korean publication DigitalDaily News (via 9to5Google) claims the
+              next Unpacked will take place on August 11, at 10 AM ET.
+            </span>
+
+            <span
+              class="text-amber-black text-[17px] leading-7 opacity-60 mb-[10px]"
+              >According to the report, Samsung will be launching five devices
+              at the event:
+            </span>
+
+            <div class="flex flex-col mb-7">
+              <div class="flex items-center gap-4">
+                <div class="size-[13px] bg-[#2F9FF8]"></div>
+                <span class="text-amber-black text-[17px] leading-10 opacity-60"
+                  >Galaxy Z Fold 3</span
+                >
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="size-[13px] bg-[#2F9FF8]"></div>
+                <span class="text-amber-black text-[17px] leading-10 opacity-60"
+                  >Galaxy Z Fold 3</span
+                >
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="size-[13px] bg-[#2F9FF8]"></div>
+                <span class="text-amber-black text-[17px] leading-10 opacity-60"
+                  >Galaxy Z Fold 3</span
+                >
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="size-[13px] bg-[#2F9FF8]"></div>
+                <span class="text-amber-black text-[17px] leading-10 opacity-60"
+                  >Galaxy Z Fold 3</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col space-y-7 text-amber-black text-[17px] leading-7 opacity-60 mb-9"
+            >
+              <span
+                >Notably, the new Galaxy Watches will be Samsung’s first to not
+                use Tizen OS. Google collaborated with Samsung to revamp Wear OS
+                from the ground up, making it smoother and more efficient.</span
+              >
+              <span
+                >Hopefully, the devices are able to maintain the long battery
+                life Samsung’s smartwatches have been known for, while having
+                much greater compatibility with smartwatch apps via Wear OS.
+                That said, the watch will use a custom One UI Watch skin —
+                because it wouldn’t be Samsung if it didn’t put its own twist on
+                the software.</span
+              >
+              <span
+                >As for the Z Fold 3, it’s expected to be a refinement of the
+                original Fold’s concept without major changes to the form
+                factor. The biggest change aside from the expected spec bump is
+                that the Z Fold 3 will support the S-Pen.</span
+              >
+              <span
+                >The event will reportedly be broadcast via YouTube, as per
+                usual, and there is no indication the company plans to hold a
+                concurrent physical event. With the rumored date a little over a
+                month away, I’d expect an official announcement from Samsung
+                within the next week or two.</span
+              >
+            </div>
+
+            <div class="flex flex-col items-center justify-center mb-8">
+              <span
+                class="mb-6 text-amber-black text-[14px] leading-7 opacity-30"
+                >Published July 5, 2021 - 8:16 pm IST</span
+              >
+              <span class="mb-4 ext-amber-black text-[14px] leading-7"
+                >by John Abraham</span
+              >
+              <a href=""
+                ><span class="underline text-[#2F9FF8] text-[14px] leading-7"
+                  >Back to top</span
+                ></a
+              >
+            </div>
+
+            <!-- COMMENT SECTION -->
+            <div class="flex items-center gap-3 mb-[10px]">
+              <span class="text-amber-black text-[15px] leading-4 font-bold"
+                >Add your comment</span
+              >
+              <hr class="bg-red-500 border flex-1" />
+            </div>
+
+            <textarea
+              placeholder="Enter your comment here.."
+              class="mb-[11px] pl-[18px] pt-3 bg-[#ECF5F8] h-[96px]"
+            ></textarea>
+
+            <button
+              class="w-[169px] bg-[#2F9FF8] text-white text-[15px] text-center leading-4 rounded-[4px] py-[10px] mb-[20px]"
+            >
+              Post Comment
+            </button>
+
+            <div class="flex gap-[14px] items-center mb-9">
+              <a
+                href=""
+                class="text-[#2F9FF8] text-[17px] font-medium leading-4 underline"
+                >View All Comments (04)</a
+              >
+              <a href=""><img src="./images/arr-up.svg" alt="" /></a>
+            </div>
+
+            <!-- USERS COMMENTS -->
+            <div class="flex flex-col gap-[21px] mb-[66px]">
+              <!-- İlk Yorum -->
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <a
+                    href=""
+                    class="text-[#2F9FF8] text-[17px] leading-5 font-medium"
+                    >Rakshan (You)</a
+                  >
+
+                  <div class="flex gap-3">
+                    <a href=""><img src="./images/thumbs-up.svg" alt="" /></a>
+                    <a href=""><img src="./images/thumbs-down.svg" alt="" /></a>
+                  </div>
+                </div>
+
+                <span class="text-amber-black opacity-60 text-[17px] leading-5"
+                  >I’ve been a great fan of Samsung products since 2010. Can’t
+                  wait for this one. 🔥🔥🔥</span
+                >
+
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-[12px] leading-3 text-amber-black opacity-30"
+                    >Posted on Jul 5, 2021 | 6:22 AM</span
+                  >
+
+                  <div class="flex items-center gap-[6px]">
+                    <img src="./images/trash.svg" alt="" />
+                    <a
+                      href=""
+                      class="text-[#FF8C8C] underline text-[12px] leading-3"
+                      >Delete Comment</a
+                    >
+                  </div>
+                </div>
+
+                <a href="" class="text-[#2F9FF8] text-[14px] leading-4"
+                  >Reply</a
+                >
+              </div>
+
+              <!-- İkinci Yorum -->
+              <div class="flex items-start">
+                <div class="w-[2px] h-[125px] bg-[#FFE8C4] mr-6"></div>
+
+                <div class="flex flex-col gap-3 flex-grow">
+                  <!-- flex-grow ekleyin -->
+                  <div class="flex items-center justify-between">
+                    <a
+                      href=""
+                      class="text-[#2F9FF8] text-[17px] leading-5 font-medium"
+                      >Rakshan (You)</a
+                    >
+
+                    <div class="flex gap-3">
+                      <a href=""><img src="./images/thumbs-up.svg" alt="" /></a>
+                      <a href=""
+                        ><img src="./images/thumbs-down.svg" alt=""
+                      /></a>
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-amber-black opacity-60 text-[17px] leading-5"
+                    >I’ve been a great fan of Samsung products since 2010. Can’t
+                    wait for this one. 🔥🔥🔥</span
+                  >
+
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="text-[12px] leading-3 text-amber-black opacity-30"
+                      >Posted on Jul 5, 2021 | 6:22 AM</span
+                    >
+                  </div>
+
+                  <a href="" class="text-[#2F9FF8] text-[14px] leading-4"
+                    >Reply</a
+                  >
+                </div>
+              </div>
+
+              <!-- İlk Yorum -->
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <a
+                    href=""
+                    class="text-[#2F9FF8] text-[17px] leading-5 font-medium"
+                    >Rakshan (You)</a
+                  >
+
+                  <div class="flex gap-3">
+                    <a href=""><img src="./images/thumbs-up.svg" alt="" /></a>
+                    <a href=""><img src="./images/thumbs-down.svg" alt="" /></a>
+                  </div>
+                </div>
+
+                <span class="text-amber-black opacity-60 text-[17px] leading-5"
+                  >I’ve been a great fan of Samsung products since 2010. Can’t
+                  wait for this one. 🔥🔥🔥</span
+                >
+
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-[12px] leading-3 text-amber-black opacity-30"
+                    >Posted on Jul 5, 2021 | 6:22 AM</span
+                  >
+
+                  <div class="flex items-center gap-[6px]">
+                    <img src="./images/trash.svg" alt="" />
+                    <a
+                      href=""
+                      class="text-[#FF8C8C] underline text-[12px] leading-3"
+                      >Delete Comment</a
+                    >
+                  </div>
+                </div>
+
+                <a href="" class="text-[#2F9FF8] text-[14px] leading-4"
+                  >Reply</a
+                >
+              </div>
+
+              <!-- İkinci Yorum -->
+              <div class="flex items-start">
+                <div class="w-[2px] h-[125px] bg-[#FFE8C4] mr-6"></div>
+
+                <div class="flex flex-col gap-3 flex-grow">
+                  <!-- flex-grow ekleyin -->
+                  <div class="flex items-center justify-between">
+                    <a
+                      href=""
+                      class="text-[#2F9FF8] text-[17px] leading-5 font-medium"
+                      >Rakshan (You)</a
+                    >
+
+                    <div class="flex gap-3">
+                      <a href=""><img src="./images/thumbs-up.svg" alt="" /></a>
+                      <a href=""
+                        ><img src="./images/thumbs-down.svg" alt=""
+                      /></a>
+                    </div>
+                  </div>
+
+                  <span
+                    class="text-amber-black opacity-60 text-[17px] leading-5"
+                    >I’ve been a great fan of Samsung products since 2010. Can’t
+                    wait for this one. 🔥🔥🔥</span
+                  >
+
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="text-[12px] leading-3 text-amber-black opacity-30"
+                      >Posted on Jul 5, 2021 | 6:22 AM</span
+                    >
+                  </div>
+
+                  <a href="" class="text-[#2F9FF8] text-[14px] leading-4"
+                    >Reply</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="flex bg-[#FFE8C5] items-center justify-between rounded-[4px] p-8 mb-[60px]"
+            >
+              <div class="flex flex-col gap-[13px]">
+                <span class="font-bold text-amber-black text-[15px] leading-4"
+                  >Subscribe to our newsletter</span
+                >
+
+                <div class="flex items-center">
+                  <input
+                    class="p-3 bg-[#FFF5E5] text-amber-black text-[15px] leading-4 rounded-[4px] mr-[13px]"
+                    type="text"
+                    placeholder="Enter Email"
+                  />
+                  <button
+                    class="bg-[#2F9FF8] rounded-[4px] text-white py-[10px] px-[25px] text-[15px] leading-4 text-center"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <img src="./images/newsletter.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 mb-[14px]">
+              <span class="text-amber-black text-[15px] leading-4 font-bold"
+                >More News for you</span
+              >
+              <hr class="bg-red-500 border flex-1" />
+            </div>
+
+            <!-- NEWS GRID -->
+            <div class="grid grid-cols-2 gap-[20px] mb-11">
+              <!-- NEWS DIV -->
+              <div
+                class="pt-[17px] pb-[13px] pl-[23px] pr-[17px] rounded-[4px] bg-white flex flex-col shadow-lg"
+              >
+                <div class="flex">
+                  <div class="flex flex-col mr-[22px]">
+                    <a
+                      href="./news.html"
+                      class="w-[182px] font-medium text-lg text-amber-black mb-[9px]"
+                      >Battlegrounds Mobile India iOS release date</a
+                    >
+                    <span
+                      class="w-[179px] text-[14px] leading-6 opacity-60 text-amber-black"
+                      >The reason behind their disappointment is that iPhone
+                      users have been..
+                    </span>
+                  </div>
+
+                  <div>
+                    <img src="./images/pubg.svg" />
+                  </div>
+                </div>
+
+                <div class="mt-[20px] flex">
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[9px]"
+                    >Sport Biz</span
+                  >
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[9px]"
+                  >
+                    &centerdot;</span
+                  >
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[30px]"
+                    >42 mins ago</span
+                  >
+
+                  <img src="./images/share.svg" />
+                  <span class="text-[12px] text-[#0768B5] leading-6 ml-2 mr-6"
+                    >Share</span
+                  >
+
+                  <img src="./images/read-later.svg" />
+                  <span class="text-[12px] text-[#0768B5] leading-6 ml-2"
+                    >Read Later</span
+                  >
+                </div>
+              </div>
+
+              <!-- NEWS DIV -->
+              <div
+                class="pt-[17px] pb-[13px] pl-[23px] pr-[17px] rounded-[4px] bg-white flex flex-col shadow-lg"
+              >
+                <div class="flex">
+                  <div class="flex flex-col mr-[22px]">
+                    <a
+                      href="./news.html"
+                      class="w-[182px] font-medium text-lg text-amber-black mb-[9px]"
+                      >Battlegrounds Mobile India iOS release date</a
+                    >
+                    <span
+                      class="w-[179px] text-[14px] leading-6 opacity-60 text-amber-black"
+                      >The reason behind their disappointment is that iPhone
+                      users have been..
+                    </span>
+                  </div>
+
+                  <div>
+                    <img src="./images/pubg.svg" />
+                  </div>
+                </div>
+
+                <div class="mt-[20px] flex">
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[9px]"
+                    >Sport Biz</span
+                  >
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[9px]"
+                  >
+                    &centerdot;</span
+                  >
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[30px]"
+                    >42 mins ago</span
+                  >
+
+                  <img src="./images/share.svg" />
+                  <span class="text-[12px] text-[#0768B5] leading-6 ml-2 mr-6"
+                    >Share</span
+                  >
+
+                  <img src="./images/read-later.svg" />
+                  <span class="text-[12px] text-[#0768B5] leading-6 ml-2"
+                    >Read Later</span
+                  >
+                </div>
+              </div>
+
+              <!-- NEWS DIV -->
+              <div
+                class="pt-[17px] pb-[13px] pl-[23px] pr-[17px] rounded-[4px] bg-white flex flex-col shadow-lg"
+              >
+                <div class="flex">
+                  <div class="flex flex-col mr-[22px]">
+                    <a
+                      href="./news.html"
+                      class="w-[182px] font-medium text-lg text-amber-black mb-[9px]"
+                      >Battlegrounds Mobile India iOS release date</a
+                    >
+                    <span
+                      class="w-[179px] text-[14px] leading-6 opacity-60 text-amber-black"
+                      >The reason behind their disappointment is that iPhone
+                      users have been..
+                    </span>
+                  </div>
+
+                  <div>
+                    <img src="./images/pubg.svg" />
+                  </div>
+                </div>
+
+                <div class="mt-[20px] flex">
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[9px]"
+                    >Sport Biz</span
+                  >
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[9px]"
+                  >
+                    &centerdot;</span
+                  >
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[30px]"
+                    >42 mins ago</span
+                  >
+
+                  <img src="./images/share.svg" />
+                  <span class="text-[12px] text-[#0768B5] leading-6 ml-2 mr-6"
+                    >Share</span
+                  >
+
+                  <img src="./images/read-later.svg" />
+                  <span class="text-[12px] text-[#0768B5] leading-6 ml-2"
+                    >Read Later</span
+                  >
+                </div>
+              </div>
+
+              <!-- NEWS DIV -->
+              <div
+                class="pt-[17px] pb-[13px] pl-[23px] pr-[17px] rounded-[4px] bg-white flex flex-col shadow-lg"
+              >
+                <div class="flex">
+                  <div class="flex flex-col mr-[22px]">
+                    <a
+                      href="./news.html"
+                      class="w-[182px] font-medium text-lg text-amber-black mb-[9px]"
+                      >Battlegrounds Mobile India iOS release date</a
+                    >
+                    <span
+                      class="w-[179px] text-[14px] leading-6 opacity-60 text-amber-black"
+                      >The reason behind their disappointment is that iPhone
+                      users have been..
+                    </span>
+                  </div>
+
+                  <div>
+                    <img src="./images/pubg.svg" />
+                  </div>
+                </div>
+
+                <div class="mt-[20px] flex">
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[9px]"
+                    >Sport Biz</span
+                  >
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[9px]"
+                  >
+                    &centerdot;</span
+                  >
+                  <span
+                    class="text-[14px] leading-6 text-amber-black opacity-40 mr-[30px]"
+                    >42 mins ago</span
+                  >
+
+                  <img src="./images/share.svg" />
+                  <span class="text-[12px] text-[#0768B5] leading-6 ml-2 mr-6"
+                    >Share</span
+                  >
+
+                  <img src="./images/read-later.svg" />
+                  <span class="text-[12px] text-[#0768B5] leading-6 ml-2"
+                    >Read Later</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <hr class="text-[#667F90] mb-[23px] border" />
+
+            <div class="flex items-center justify-between mb-[30px]">
+              <div>
+                <a href=""
+                  ><span
+                    class="text-[14px] leading-5 text-amber-black opacity-40"
+                    >© Aster News, 2022</span
+                  ></a
+                >
+              </div>
+
+              <div class="flex gap-[38px]">
+                <a href=""
+                  ><span
+                    class="text-[14px] leading-5 text-amber-black opacity-40"
+                    >Privacy Policy</span
+                  ></a
+                >
+                <a href=""
+                  ><span
+                    class="text-[14px] leading-5 text-amber-black opacity-40"
+                    >Terms of Service</span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGTH SECTION -->
+          <div class="flex flex-col flex-1 gap-4">
+            <!-- WEATHER -->
+            <div class="flex flex-col p-4 rounded-[4px] bg-white shadow-lg">
+              <div class="flex justify-between mb-[9px]">
+                <span class="text-[15px] leading-5 text-amber-black"
+                  >Coimbatore, Tamil Nadu</span
+                >
+                <img src="./images/crosshair.svg" />
+              </div>
+              <hr class="text-[#667F90] mb-[15px]" />
+              <div class="flex justify-between">
+                <div class="flex flex-col gap-2">
+                  <span class="text-[15px] leading-4 text-amber-black"
+                    >Sunny</span
+                  >
+                  <span class="font-bold text-amber-black text-[26px] leading-7"
+                    >31&deg;c</span
+                  >
+                </div>
+                <div>
+                  <img src="./images/sun.svg" />
+                </div>
+              </div>
+              <div class="mt-4 flex gap-7">
+                <span class="text-amber-black text-sm">Celsius</span>
+                <span class="text-amber-black text-sm opacity-30"
+                  >Fahrenheit</span
+                >
+              </div>
+            </div>
+
+            <!-- STORY -->
+            <div class="flex flex-col p-4 rounded-[4px] bg-white shadow-lg">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="./images/feather.svg" />
+                <span class="text-amber-black text-[15px] leading-4"
+                  >Become a Story Writer</span
+                >
+              </div>
+              <div class="flex gap-6 items-center justify-between">
+                <span class="w-[120px] text-[12px] text-amber-black opacity-60"
+                  >Contribute stories and start earning.</span
+                >
+
+                <button
+                  class="border w-[110px] border-[#2F9FF8] rounded-[4px] px-4 py-[10px] text-[#2F9FF8] text-[15px]"
+                >
+                  Know More
+                </button>
+              </div>
+            </div>
+
+            <!-- QUICK BYTES -->
+            <!-- <div class="flex flex-col p-4 rounded-[4px] bg-white shadow-lg flex-shrink-0">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-[15px]">
+                            <img src="./images/file-text.svg">
+                            <span class="text-[15px] text-amber-black">Quick Bytes</span>
+                        </div>
+
+                        <div class="flex gap-[10px]"> 
+                            <a href=""><img src="./images/left-blue.svg"></a>
+                            <a href=""><img src="./images/right-blue.svg"></a>
+                        </div>
+                    </div>
+
+                    <hr class="text-[#667F90] mt-[9px] mb-[13px]">
+
+                    <div class="flex flex-col gap-6 mb-[9px]">
+                        <span class="text-[14px] text-amber-black opacity-60 leading-5">The price of petrol remained unchanged on July 6 after reaching a new record high on the previous day, according to a price notification by state-owned fuel retailers. The diesel price remained stable for the second consecutive day.
+                        </span>
+
+                        <span class="text-[14px] text-amber-black opacity-60 leading-5">The increase on July 5, 35th in two months, took the petrol price in Delhi closer to Rs 100 per litre-mark. The petrol price in the national capital soared to Rs 99.9 a litre and diesel was priced at Rs 89.4 per litre, according to Bharat Petroleum's price listing.</span>
+                    </div>
+
+                    <div class="flex items-center justify-center flex-shrink-0">
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <a href="#"><img src="./images/pont-md-blue.svg" alt=""></a>
+                            <div class="cursor-pointer w-[2px] h-[2px] bg-amber-black opacity-30 rounded-full"></div>                           
+                            <div class="cursor-pointer w-[2px] h-[2px] bg-amber-black opacity-30 rounded-full"></div>                           
+                            <div class="cursor-pointer w-[2px] h-[2px] bg-amber-black opacity-30 rounded-full"></div>                           
+                            <div class="cursor-pointer w-[2px] h-[2px] bg-amber-black opacity-30 rounded-full"></div>                           
+                            <div class="cursor-pointer w-[2px] h-[2px] bg-amber-black opacity-30 rounded-full"></div>                        
+                        </div>
+                    </div>
+                    </div> -->
+
+            <!-- QUICK BYTES -->
+            <div
+              class="flex flex-col p-4 rounded-[4px] bg-white shadow-lg flex-shrink-0"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-[15px]">
+                  <img src="./images/file-text.svg" alt="File Text Icon" />
+                  <span class="text-[15px] text-amber-black">Quick Bytes</span>
+                </div>
+
+                <div class="flex gap-[10px]">
+                  <a href=""
+                    ><img src="./images/left-blue.svg" alt="Left Arrow"
+                  /></a>
+                  <a href=""
+                    ><img src="./images/right-blue.svg" alt="Right Arrow"
+                  /></a>
+                </div>
+              </div>
+
+              <hr class="text-[#667F90] mt-[9px] mb-[13px]" />
+
+              <div class="flex flex-col gap-6 mb-[9px]">
+                <span class="text-[14px] text-amber-black opacity-60 leading-5"
+                  >The price of petrol remained unchanged on July 6 after
+                  reaching a new record high on the previous day, according to a
+                  price notification by state-owned fuel retailers. The diesel
+                  price remained stable for the second consecutive day.</span
+                >
+
+                <span class="text-[14px] text-amber-black opacity-60 leading-5"
+                  >The increase on July 5, 35th in two months, took the petrol
+                  price in Delhi closer to Rs 100 per litre-mark. The petrol
+                  price in the national capital soared to Rs 99.9 a litre and
+                  diesel was priced at Rs 89.4 per litre, according to Bharat
+                  Petroleum's price listing.</span
+                >
+              </div>
+
+              <div class="flex items-center justify-center flex-shrink-0">
+                <div class="flex items-center gap-2 flex-shrink-0">
+                  <div
+                    class="cursor-pointer w-[2px] h-[2px] min-w-[8px] min-h-[8px] bg-[#2F9FF8] rounded-full"
+                  ></div>
+                  <div
+                    class="cursor-pointer w-[2px] h-[2px] min-w-[4px] min-h-[4px] bg-amber-black opacity-30 rounded-full"
+                  ></div>
+                  <div
+                    class="cursor-pointer w-[2px] h-[2px] min-w-[4px] min-h-[4px] bg-amber-black opacity-30 rounded-full"
+                  ></div>
+                  <div
+                    class="cursor-pointer w-[2px] h-[2px] min-w-[4px] min-h-[4px] bg-amber-black opacity-30 rounded-full"
+                  ></div>
+                  <div
+                    class="cursor-pointer w-[2px] h-[2px] min-w-[4px] min-h-[4px] bg-amber-black opacity-30 rounded-full"
+                  ></div>
+                  <div
+                    class="cursor-pointer w-[2px] h-[2px] min-w-[4px] min-h-[4px] bg-amber-black opacity-30 rounded-full"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="flex flex-col p-4 rounded-[4px] bg-white shadow-lg">
+              <span class="text-[15px] leading-4 text-amber-black mb-3"
+                >Subscribe to our newsletter</span
+              >
+
+              <input
+                type="text"
+                placeholder="Enter Email"
+                class="bg-[#F4F9F8] text-amber-black rounded-[4px] border-0.1 border-[#072D4B] py-[11px] px-[14px] mb-4"
+              />
+
+              <button
+                class="bg-[#2F9FF8] rounded-[4px] text-white text-[15px leading-4] text-center py-[10px]"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
